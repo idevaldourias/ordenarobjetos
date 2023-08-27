@@ -1,18 +1,20 @@
-﻿string path = @"C:\Users\ideva\source\repos\OrdenaNomes\OrdenaNomes\nomes.txt";
+﻿using OrdenaNomes.Entities;
+
+string path = @"C:\Users\ideva\source\repos\OrdenaNomes\OrdenaNomes\nomesSalario.txt";
 
 try
 {
     using (StreamReader sr = File.OpenText(path))
     {
-        List<string> list = new List<string>();
+        List<Employee> list = new List<Employee>();
         while (!sr.EndOfStream)
         {
-            list.Add(sr.ReadLine());
+            list.Add(new Employee(sr.ReadLine()));
         }
         list.Sort();
-        foreach (string line in list)
+        foreach (Employee emp in list)
         {
-            Console.WriteLine(line);
+            Console.WriteLine(emp);
         }
     }
 } 
