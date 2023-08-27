@@ -18,6 +18,6 @@ try
 } 
 catch (IOException e)
 {
-    Console.WriteLine("An error ocurred: ");
+    Console.WriteLine("An error ocurred ");
     Console.WriteLine(e.Message);
 }
